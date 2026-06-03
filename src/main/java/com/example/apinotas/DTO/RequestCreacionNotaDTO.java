@@ -1,21 +1,21 @@
 package com.example.apinotas.DTO;
 
-import jakarta.validation.constraints.Max;
-import jakarta.validation.constraints.Min;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.*;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.time.LocalDateTime;
-
+@Getter
+@Setter
 public class RequestCreacionNotaDTO {
     @NotNull
     @NotBlank
-    @Min(10)
+    @Size(min=5)
     private String title;
 
     @NotNull
     @NotBlank
-    @Max(50)
-    private String contente;
+    @Size(max=50,min=10)
+    private String content;
 
 }
